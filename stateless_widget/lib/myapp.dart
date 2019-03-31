@@ -5,6 +5,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(onPressed: (){}, child: Icon(Icons.add, color: Colors.white,),backgroundColor: Colors.indigoAccent,),
       appBar: AppBar(leading: Icon(Icons.home),title: Text("Stateless Widget App"),backgroundColor: Colors.indigoAccent,),
       backgroundColor: Colors.white,
       body: Column(
@@ -14,6 +15,11 @@ class MyApp extends StatelessWidget {
           MyCard(Icons.date_range, "In a month"),
         ],
       ),
+      bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(title: Text("Home"),icon: Icon(Icons.home)),
+        BottomNavigationBarItem(title: Text("Time"),icon: Icon(Icons.access_alarm)),
+        BottomNavigationBarItem(title: Text("Keyboard"),icon: Icon(Icons.keyboard)),
+      ]),
     );
   }
 }
@@ -28,7 +34,7 @@ Card MyCard(IconData icon, txt){
     child: Row(
     crossAxisAlignment: CrossAxisAlignment.center,
     children: <Widget>[
-    Icon(icon, size: 30,),
+    Icon(icon, size: 40,color: Colors.indigoAccent,),
     Text(txt, style: TextStyle(fontSize: 30),)
     ],
     ),
